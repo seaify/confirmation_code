@@ -1,6 +1,10 @@
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'confirmation_code/version'
+
 Gem::Specification.new do |s|
   s.name        = "confirmation_code"
-  s.version     = "0.0.1"
+  s.version     = ConfirmationCode::VERSION
   s.date        = "2016-02-03"
   s.summary     = "use platforms like lianzhong to auto input confirmation code"
   s.description = "use platforms like lianzhong to auto input confirmation code"
@@ -11,4 +15,6 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.executables << 'confirmation_code'
+  s.add_dependency 'excon'
+  s.add_dependency 'awesome_print', '~> 1.6'
 end
