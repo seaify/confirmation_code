@@ -16,15 +16,20 @@ module ConfirmationCode
       def upload(image_url, options = {})
         ap options
 
-        options['upload'] = open(image_url).read
+        File.open("code.jpeg", "wb") do |f|
+          f.write open(image_url).read
+        end
+
         options = default_options.merge options
         ap options
-        c = HTTPClient.new
-        boundary = "--1234567890"
-        puts c.post_content(UPLOAD_URL, options,
-                            "content-type" => "multipart/form-data, boundary=#{boundary}")
-        #response = Excon.post(UPLOAD_URL, :body => options, :headers => { "Content-Type" => "multipart/form-data" })
-        #ap response
+        client = HTTPClient.new
+        File.open('code.jpeg') do |file|
+          options['upload'] = file
+          response = client.post(UPLOAD_URL, options)
+          ap response.body
+          ap response.status
+        end
+
       end
 
       def account
