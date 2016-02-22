@@ -11,17 +11,27 @@ module ConfirmationCode
     @service = ConfirmationCode::Service.const_get("#{service.to_s.capitalize}")
     @username = username
     @password = password
+    ap @username
+    ap @password
+    ap default_options
+    @service
   end
 
   def upload(image_url, options = {})
+    ap "in upload"
+    ap default_options
+    ap @service
     options = default_options.merge options
+    ap options
     @service.upload image_url, options if @service
   end
 
+  private
+
   def default_options
     {
-        username:  @username,
-        password:  @password
+        user_name:  @username,
+        user_pw:  @password
     }
   end
 

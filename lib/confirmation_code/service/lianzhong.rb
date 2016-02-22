@@ -5,12 +5,16 @@ module ConfirmationCode
   module Service
     module Lianzhong
 
+      extend self
+
       UPLOAD_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=upload'
       ACCOUNT_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=point'
       RECOGNITION_ERROR_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=error'
 
       def upload(image_url, options = {})
+        ap options
         image= Excon.post(UPLOAD_URL, :body => URI.encode_www_form(options), :headers => { "Content-Type" => "application/x-www-form-urlencoded" })
+        ap image
         options['upload'] = 'xx'
         response = Excon.post(UPLOAD_URL, :body => URI.encode_www_form(options), :headers => { "Content-Type" => "application/x-www-form-urlencoded" })
       end
