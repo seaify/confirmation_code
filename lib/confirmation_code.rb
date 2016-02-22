@@ -1,10 +1,16 @@
-class ConfirmationCode
+Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/confirmation_code/service/*.rb").sort.each do |f|
+  require f.match(/(confirmation_code\/service\/.*)\.rb$/)[0]
+end
+
+module ConfirmationCode
+  extend self
+
   attr_reader :username, :password
 
-  def use(service, options)
+  def use(service, username, password)
     @service = ConfirmationCode::Service.const_get("#{service.to_s.capitalize}")
-    @username = options[:username]
-    @password = options[:password]
+    @username = username
+    @password = password
   end
 
   def upload(image_url, options = {})
