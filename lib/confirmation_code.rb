@@ -2,6 +2,8 @@ Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/confirmation_code/service/
   require f.match(/(confirmation_code\/service\/.*)\.rb$/)[0]
 end
 
+require 'httpclient'
+
 module ConfirmationCode
   extend self
 
@@ -11,19 +13,22 @@ module ConfirmationCode
     @service = ConfirmationCode::Service.const_get("#{service.to_s.capitalize}")
     @username = username
     @password = password
-    ap @username
-    ap @password
-    ap default_options
     @service
   end
 
   def upload(image_url, options = {})
-    ap "in upload"
-    ap default_options
-    ap @service
     options = default_options.merge options
-    ap options
     @service.upload image_url, options if @service
+  end
+
+  def account
+    @service.account default_options if @service
+  end
+
+  def recognition_error(yzm_id, options = {})
+    options['yzm_id'] = yzm_id
+    options = default_options.merge options
+    @service.recognition_error options if @service
   end
 
   private

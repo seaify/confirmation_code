@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = ConfirmationCode::VERSION
   s.date        = "2016-02-03"
   s.summary     = "use platforms like lianzhong to auto input confirmation code"
-  s.description = "use platforms like lianzhong to auto input confirmation code"
+  s.description = "support platforms like lianzhong"
   s.authors     = ["seaify"]
   s.email       = "dilin.life@gmail.com"
   s.files       = Dir["lib/confirmation_code.rb"]
@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.executables << 'confirmation_code'
-  s.add_dependency 'excon'
-  s.add_dependency 'httpclient'
+  s.add_dependency 'httpclient', '~> 2.7'
   s.add_dependency 'awesome_print', '~> 1.6'
 end

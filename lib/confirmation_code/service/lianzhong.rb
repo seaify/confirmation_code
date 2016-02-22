@@ -1,43 +1,43 @@
 require 'awesome_print'
-require 'excon'
-require "open-uri"
+require 'open-uri'
 require 'httpclient'
+require 'json'
 
 module ConfirmationCode
   module Service
     module Lianzhong
 
       extend self
+      include ConfirmationCode
 
       UPLOAD_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=upload'
       ACCOUNT_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=point'
       RECOGNITION_ERROR_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=error'
 
-      def upload(image_url, options = {})
-        ap options
+      def client
+        @client ||= HTTPClient.new
+      end
 
+      def upload(image_url, options = {})
         File.open("code.jpeg", "wb") do |f|
           f.write open(image_url).read
         end
-
         options = default_options.merge options
-        ap options
-        client = HTTPClient.new
         File.open('code.jpeg') do |file|
           options['upload'] = file
           response = client.post(UPLOAD_URL, options)
-          ap response.body
-          ap response.status
+          JSON.parse(response.body)
         end
-
       end
 
-      def account
-
+      def account(options = {})
+        response = client.post(ACCOUNT_URL, options)
+        JSON.parse(response.body)
       end
 
-      def recognition_error
-
+      def recognition_error(options = {})
+        response = client.post(RECOGNITION_ERROR_URL, options)
+        JSON.parse(response.body)
       end
 
       def default_options
