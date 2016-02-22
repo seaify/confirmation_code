@@ -98,8 +98,8 @@ if __name__=="__main__":
          '67c86225',
          'https://passport.58.com/validatecode?temp=123i1knr04o',
          "http://bbb4.hyslt.com/api.php?mod=php&act=upload",
-         '',
-         '',
+         '4',
+         '6',
          '',
          '')
 

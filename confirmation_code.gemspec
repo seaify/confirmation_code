@@ -16,5 +16,6 @@ Gem::Specification.new do |s|
 
   s.executables << 'confirmation_code'
   s.add_dependency 'excon'
+  s.add_dependency 'httpclient'
   s.add_dependency 'awesome_print', '~> 1.6'
 end

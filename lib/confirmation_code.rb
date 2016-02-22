@@ -31,7 +31,8 @@ module ConfirmationCode
   def default_options
     {
         user_name:  @username,
-        user_pw:  @password
+        user_pw:  @password,
+        source: 'ruby',
     }
   end
 

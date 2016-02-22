@@ -1,6 +1,7 @@
 require 'awesome_print'
 require 'excon'
 require "open-uri"
+require 'httpclient'
 
 module ConfirmationCode
   module Service
@@ -18,8 +19,12 @@ module ConfirmationCode
         options['upload'] = open(image_url).read
         options = default_options.merge options
         ap options
-        response = Excon.post(UPLOAD_URL, :body => URI.encode_www_form(options), :headers => { "Content-Type" => "multipart/form-data" })
-        ap response
+        c = HTTPClient.new
+        boundary = "--1234567890"
+        puts c.post_content(UPLOAD_URL, options,
+                            "content-type" => "multipart/form-data, boundary=#{boundary}")
+        #response = Excon.post(UPLOAD_URL, :body => options, :headers => { "Content-Type" => "multipart/form-data" })
+        #ap response
       end
 
       def account
