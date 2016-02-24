@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = "support platforms like lianzhong"
   s.authors     = ["seaify"]
   s.email       = "dilin.life@gmail.com"
-  s.files       = Dir["lib/confirmation_code.rb"]
+  s.files       += `git ls-files`.split($/)
   s.homepage    = "https://github.com/seaify/confirmation_code"
   s.license     = "MIT"
 
