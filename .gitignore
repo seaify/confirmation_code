@@ -37,5 +37,9 @@ build/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 *.jpeg
+*.py
+*.doc
+*.bmp
+uuPythonDemo2014.6.7/
 
 # Created by .ignore support plugin (hsz.mobi)
