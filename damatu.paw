@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>0F034DAC-7079-4606-B391-4EAA2D184C72</UUID>
-        <nextObjectID>176</nextObjectID>
+        <nextObjectID>180</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -96,7 +96,7 @@
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">打码兔</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z107 z172 z112"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z172 z107 z112 z178"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -126,16 +126,6 @@
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z112"></relationship>
-    </object>
-    <object type="LMREQUESTGROUP" id="z114">
-        <attribute name="uuid" type="string">315E3F71-1AB2-46AF-B23B-A5E448F18239</attribute>
-        <attribute name="order" type="int64">1</attribute>
-        <attribute name="name" type="string">New Group</attribute>
-        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
-        <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
     </object>
     <object type="LMENVIRONMENTDOMAIN" id="z139">
         <attribute name="uuid" type="string">ACB78D83-97A5-4C0E-9ACF-5DFF85A36491</attribute>
@@ -182,7 +172,7 @@
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">打码兔加密</attribute>
         <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z154"></relationship>
-        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z163 z143 z175 z162 z152 z158 z157 z169"></relationship>
+        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z179 z163 z143 z175 z162 z152 z158 z157 z169"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z146">
         <attribute name="value" type="string">lsm123</attribute>
@@ -235,7 +225,7 @@
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Default Environment</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z145"></relationship>
-        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z156 z155 z164 z176 z161 z170 z150 z148"></relationship>
+        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z156 z155 z164 z176 z161 z180 z170 z150 z148"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z155">
         <attribute name="value" type="string">[{"data":{"encoding":"Hexadecimal","hashType":2,"input":[{"data":{"environmentVariable":"70D58A8C-0AC5-4ED2-B141-DB478F44348A"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"B5458D8D-FB9B-41E6-B0C2-B483B7972D7B"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"}],"uppercase":0},"identifier":"com.luckymarmot.HashDynamicValue"}]</attribute>
@@ -384,5 +374,43 @@
         <attribute name="value" type="string">a63b2cb2</attribute>
         <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z154"></relationship>
         <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z175"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z177">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z178"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z178">
+        <attribute name="uuid" type="string">25BD1B1C-CB27-4258-BB89-D5F0B4E9C8EB</attribute>
+        <attribute name="url" type="string">[{"data":{"environmentVariable":"3F0E126E-80EB-42FC-948F-9BB3056D1789"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"FBBFC2D5-CB61-419A-8CB5-EB3ED5A91547"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/app\\/d2ReportError?appID=",{"data":{"environmentVariable":"CE62BA1B-77E4-4ED0-B603-EFC8D7C20CB3"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600pwd=",{"data":{"environmentVariable":"CC6DE0A1-EC21-4D3F-AA1B-4C06006E4B45"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600user=",{"data":{"environmentVariable":"295648E5-FC22-4DA5-BDBF-F1CC230CB8A0"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600sign=",{"data":{"environmentVariable":"A7EC29CE-ECD4-4238-9A9D-DAA9B7D9781E"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600id=",{"data":{"request":"0BBE0478-FC09-4D0E-B775-F8172D8E5C83","keyPath":["id"],"format":1},"identifier":"com.luckymarmot.ResponseBodyPathDynamicValue"}]</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[[["file"],[{"data":{"environmentVariable":"EAA39355-4AEE-4E2E-A045-F581429182EC"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"}],true]]},"identifier":"com.luckymarmot.BodyMultipartFormDataDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">3</attribute>
+        <attribute name="name" type="string">报告验证码错误</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z111"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z177"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLE" id="z179">
+        <attribute name="uuid" type="string">A7EC29CE-ECD4-4238-9A9D-DAA9B7D9781E</attribute>
+        <attribute name="order" type="int64">8</attribute>
+        <attribute name="name" type="string">report_sign</attribute>
+        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z145"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z180"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z180">
+        <attribute name="value" type="string">4ae46be1</attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z154"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z179"></relationship>
     </object>
 </database>
