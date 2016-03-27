@@ -41,5 +41,6 @@ build/
 *.doc
 *.bmp
 uuPythonDemo2014.6.7/
+.DS_Store
 
 # Created by .ignore support plugin (hsz.mobi)
