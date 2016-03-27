@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>0F034DAC-7079-4606-B391-4EAA2D184C72</UUID>
-        <nextObjectID>198</nextObjectID>
+        <nextObjectID>204</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -103,14 +103,14 @@
     </object>
     <object type="LMREQUEST" id="z112">
         <attribute name="uuid" type="string">D920AAAA-8410-442D-853A-14A0B421DFE1</attribute>
-        <attribute name="url" type="string">[{"data":{"environmentVariable":"3F0E126E-80EB-42FC-948F-9BB3056D1789"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"FBBFC2D5-CB61-419A-8CB5-EB3ED5A91547"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/app\\/d2Url?appID=",{"data":{"environmentVariable":"CE62BA1B-77E4-4ED0-B603-EFC8D7C20CB3"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600pwd=",{"data":{"environmentVariable":"CC6DE0A1-EC21-4D3F-AA1B-4C06006E4B45"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600user=",{"data":{"environmentVariable":"295648E5-FC22-4DA5-BDBF-F1CC230CB8A0"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600sign=",{"data":{"environmentVariable":"3777C087-9325-40C3-AD9A-44291FAC0958"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600url=",{"data":{"input":[{"data":{"environmentVariable":"C682DDFA-41C7-471A-BF2A-0D52C7BDBC94"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"}],"mode":0,"charset":"utf-8"},"identifier":"com.luckymarmot.URLEncodingDynamicValue"},"\u2600type=200"]</attribute>
+        <attribute name="url" type="string">[{"data":{"environmentVariable":"3F0E126E-80EB-42FC-948F-9BB3056D1789"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"FBBFC2D5-CB61-419A-8CB5-EB3ED5A91547"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/app\\/d2Url?appID=",{"data":{"environmentVariable":"CE62BA1B-77E4-4ED0-B603-EFC8D7C20CB3"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600pwd=",{"data":{"environmentVariable":"CC6DE0A1-EC21-4D3F-AA1B-4C06006E4B45"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600user=",{"data":{"environmentVariable":"295648E5-FC22-4DA5-BDBF-F1CC230CB8A0"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600sign=",{"data":{"environmentVariable":"3777C087-9325-40C3-AD9A-44291FAC0958"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600url=",{"data":{"environmentVariable":"D44B9442-5950-420A-8EB5-011C75F740D5"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600type=200"]</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"keyValues":[]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[]},"identifier":"com.luckymarmot.BodyMultipartFormDataDynamicValue"}]</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">上传图片url</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z111"></relationship>
@@ -172,7 +172,7 @@
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">打码兔加密</attribute>
         <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z154"></relationship>
-        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z175 z169 z197 z152 z143 z157 z158 z163 z179 z181 z162"></relationship>
+        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z175 z169 z197 z152 z143 z157 z158 z163 z179 z181 z199 z162"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z146">
         <attribute name="value" type="string">lsm123</attribute>
@@ -225,7 +225,7 @@
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Default Environment</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z145"></relationship>
-        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z176 z164 z182 z148 z150 z180 z198 z170 z155 z161 z156"></relationship>
+        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z176 z164 z182 z148 z150 z180 z198 z170 z155 z161 z156 z200"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z155">
         <attribute name="value" type="string">[{"data":{"encoding":"Hexadecimal","hashType":2,"input":[{"data":{"environmentVariable":"70D58A8C-0AC5-4ED2-B141-DB478F44348A"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"B5458D8D-FB9B-41E6-B0C2-B483B7972D7B"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"}],"uppercase":0},"identifier":"com.luckymarmot.HashDynamicValue"}]</attribute>
@@ -304,14 +304,14 @@
         <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">default</attribute>
         <relationship name="environments" type="0/0" destination="LMENVIRONMENT" idrefs="z168"></relationship>
-        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z173 z166"></relationship>
+        <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE" idrefs="z201 z173 z203 z166"></relationship>
     </object>
     <object type="LMENVIRONMENT" id="z168">
         <attribute name="uuid" type="string">B7BDE867-A008-41CF-9C01-EA8FAC1EB7C1</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Default Environment</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z167"></relationship>
-        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z165 z174"></relationship>
+        <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z174 z165 z204 z202"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLE" id="z169">
         <attribute name="uuid" type="string">3777C087-9325-40C3-AD9A-44291FAC0958</attribute>
@@ -321,7 +321,7 @@
         <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z170"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z170">
-        <attribute name="value" type="string">2854ecc1</attribute>
+        <attribute name="value" type="string">[{"data":{"name":"slice","input":"[{\\"data\\":{\\"algorithm_name\\":\\"md5_bytes\\",\\"input\\":\\"[{\\\\\\"data\\\\\\":{\\\\\\"environmentVariable\\\\\\":\\\\\\"79085216-8474-42FD-B224-959C2BB34E84\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.luckymarmot.EnvironmentVariableDynamicValue\\\\\\"},\\\\\\",\\\\\\",{\\\\\\"data\\\\\\":{\\\\\\"algorithm_name\\\\\\":\\\\\\"bytes\\\\\\",\\\\\\"input\\\\\\":\\\\\\"[{\\\\\\\\\\\\\\"data\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\"environmentVariable\\\\\\\\\\\\\\":\\\\\\\\\\\\\\"C682DDFA-41C7-471A-BF2A-0D52C7BDBC94\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\"identifier\\\\\\\\\\\\\\":\\\\\\\\\\\\\\"com.luckymarmot.EnvironmentVariableDynamicValue\\\\\\\\\\\\\\"}]\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.seaify.algorithms\\\\\\"}]\\"},\\"identifier\\":\\"com.seaify.algorithms\\"}]","slice":"0,8"},"identifier":"com.seaify.utils"}]</attribute>
         <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z154"></relationship>
         <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z169"></relationship>
     </object>
@@ -387,7 +387,7 @@
     </object>
     <object type="LMREQUEST" id="z178">
         <attribute name="uuid" type="string">25BD1B1C-CB27-4258-BB89-D5F0B4E9C8EB</attribute>
-        <attribute name="url" type="string">[{"data":{"environmentVariable":"3F0E126E-80EB-42FC-948F-9BB3056D1789"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"FBBFC2D5-CB61-419A-8CB5-EB3ED5A91547"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/app\\/d2ReportError?appID=",{"data":{"environmentVariable":"CE62BA1B-77E4-4ED0-B603-EFC8D7C20CB3"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600pwd=",{"data":{"environmentVariable":"CC6DE0A1-EC21-4D3F-AA1B-4C06006E4B45"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600user=",{"data":{"environmentVariable":"295648E5-FC22-4DA5-BDBF-F1CC230CB8A0"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600sign=",{"data":{"environmentVariable":"A7EC29CE-ECD4-4238-9A9D-DAA9B7D9781E"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600id=",{"data":{"request":"0BBE0478-FC09-4D0E-B775-F8172D8E5C83","keyPath":["id"],"format":1},"identifier":"com.luckymarmot.ResponseBodyPathDynamicValue"},"\u2600=",{"data":{},"identifier":"com.luckymarmot.RequestMethodDynamicValue"},"\u2600=",{"data":{"arrayType":""},"identifier":"com.commanigy.PawExtensions.NameRandomizerDynamicValue"},"\u2600=time\u2600=",{"data":{"encoding":"Hexadecimal","hashType":2,"uppercase":0},"identifier":"com.luckymarmot.HashDynamicValue"},"\u2600=",{"data":{"algorithm_name":"bytes","input":"xxxxee1122FEIE"},"identifier":"com.seaify.algorithms"}]</attribute>
+        <attribute name="url" type="string">[{"data":{"environmentVariable":"3F0E126E-80EB-42FC-948F-9BB3056D1789"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},{"data":{"environmentVariable":"FBBFC2D5-CB61-419A-8CB5-EB3ED5A91547"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/app\\/d2ReportError?appID=",{"data":{"environmentVariable":"CE62BA1B-77E4-4ED0-B603-EFC8D7C20CB3"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600pwd=",{"data":{"environmentVariable":"CC6DE0A1-EC21-4D3F-AA1B-4C06006E4B45"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600user=",{"data":{"environmentVariable":"295648E5-FC22-4DA5-BDBF-F1CC230CB8A0"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\u2600sign=",{"data":{"name":"slice","input":"[{\\"data\\":{\\"algorithm_name\\":\\"md5_bytes\\",\\"input\\":\\"[{\\\\\\"data\\\\\\":{\\\\\\"environmentVariable\\\\\\":\\\\\\"79085216-8474-42FD-B224-959C2BB34E84\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.luckymarmot.EnvironmentVariableDynamicValue\\\\\\"},\\\\\\",\\\\\\",{\\\\\\"data\\\\\\":{\\\\\\"algorithm_name\\\\\\":\\\\\\"bytes\\\\\\",\\\\\\"input\\\\\\":\\\\\\"[{\\\\\\\\\\\\\\"data\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\"param\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\"]},\\\\\\\\\\\\\\"identifier\\\\\\\\\\\\\\":\\\\\\\\\\\\\\"com.luckymarmot.RequestURLParamDynamicValue\\\\\\\\\\\\\\"}]\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.seaify.algorithms\\\\\\"}]\\"},\\"identifier\\":\\"com.seaify.algorithms\\"}]","slice":"0,8"},"identifier":"com.seaify.utils"},"\u2600id=",{"data":{"request":"0BBE0478-FC09-4D0E-B775-F8172D8E5C83","keyPath":["id"],"format":1},"identifier":"com.luckymarmot.ResponseBodyPathDynamicValue"}]</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -428,13 +428,49 @@
     <object type="LMENVIRONMENTVARIABLE" id="z197">
         <attribute name="uuid" type="string">0A9FC8FF-CCEF-439F-AA50-88F52F7C8E15</attribute>
         <attribute name="order" type="int64">10</attribute>
-        <attribute name="name" type="string"></attribute>
+        <attribute name="name" type="string">post_sign1</attribute>
         <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z145"></relationship>
         <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z198"></relationship>
     </object>
     <object type="LMENVIRONMENTVARIABLEVALUE" id="z198">
-        <attribute name="value" type="string">[{"data":{"input":"fegee","slice":"0,2","name":"slice"},"identifier":"com.seaify.utils"}]</attribute>
+        <attribute name="value" type="string">[{"data":{"name":"slice","input":"[{\\"data\\":{\\"algorithm_name\\":\\"md5_bytes\\",\\"input\\":\\"[{\\\\\\"data\\\\\\":{\\\\\\"environmentVariable\\\\\\":\\\\\\"79085216-8474-42FD-B224-959C2BB34E84\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.luckymarmot.EnvironmentVariableDynamicValue\\\\\\"},\\\\\\",\\\\\\",{\\\\\\"data\\\\\\":{\\\\\\"algorithm_name\\\\\\":\\\\\\"bytes\\\\\\",\\\\\\"input\\\\\\":\\\\\\"[{\\\\\\\\\\\\\\"data\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\"param\\\\\\\\\\\\\\":[\\\\\\\\\\\\\\"ffe\\\\\\\\\\\\\\"]},\\\\\\\\\\\\\\"identifier\\\\\\\\\\\\\\":\\\\\\\\\\\\\\"com.luckymarmot.RequestURLParamDynamicValue\\\\\\\\\\\\\\"}]\\\\\\"},\\\\\\"identifier\\\\\\":\\\\\\"com.seaify.algorithms\\\\\\"}]\\"},\\"identifier\\":\\"com.seaify.algorithms\\"}]","slice":"0,8"},"identifier":"com.seaify.utils"}]</attribute>
         <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z154"></relationship>
         <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z197"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLE" id="z199">
+        <attribute name="uuid" type="string">1E2303CE-321C-4346-A163-86F0E30C6991</attribute>
+        <attribute name="order" type="int64">11</attribute>
+        <attribute name="name" type="string"></attribute>
+        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z145"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z200"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z200">
+        <attribute name="value" type="string"></attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z154"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z199"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLE" id="z201">
+        <attribute name="uuid" type="string">D44B9442-5950-420A-8EB5-011C75F740D5</attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string">encode_image_url</attribute>
+        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z167"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z202"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z202">
+        <attribute name="value" type="string">[{"data":{"input":[{"data":{"environmentVariable":"C682DDFA-41C7-471A-BF2A-0D52C7BDBC94"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"}],"mode":0,"charset":"utf-8"},"identifier":"com.luckymarmot.URLEncodingDynamicValue"}]</attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z168"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z201"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLE" id="z203">
+        <attribute name="uuid" type="string">6FC18201-0A18-481A-8614-7311B605ED10</attribute>
+        <attribute name="order" type="int64">3</attribute>
+        <attribute name="name" type="string"></attribute>
+        <relationship name="domain" type="0/1" destination="LMENVIRONMENTDOMAIN" idrefs="z167"></relationship>
+        <relationship name="values" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z204"></relationship>
+    </object>
+    <object type="LMENVIRONMENTVARIABLEVALUE" id="z204">
+        <attribute name="value" type="string"></attribute>
+        <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z168"></relationship>
+        <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z203"></relationship>
     </object>
 </database>
