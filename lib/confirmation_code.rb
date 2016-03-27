@@ -37,7 +37,6 @@ module ConfirmationCode
     {
         user_name:  @username,
         user_pw:  @password,
-        source: 'ruby',
     }
   end
 

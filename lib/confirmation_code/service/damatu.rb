@@ -2,20 +2,41 @@ require 'awesome_print'
 require 'open-uri'
 require 'httpclient'
 require 'json'
+require 'digest/md5'
 
 module ConfirmationCode
   module Service
-    module Lianzhong
+    module Damatu
 
       extend self
       include ConfirmationCode
 
-      UPLOAD_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=upload'
-      ACCOUNT_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=point'
-      RECOGNITION_ERROR_URL = 'http://bbb4.hyslt.com/api.php?mod=php&act=error'
+      HOST = 'http://api.dama2.com:7766'
+
+      UPLOAD_URL = File.join(HOST, 'app/d2Url?')
+      ACCOUNT_URL = File.join(HOST, 'app/d2Balance?')
+      RECOGNITION_ERROR_URL = File.join(HOST, 'app/d2ReportError?')
+
+      attr_reader :app_key
+
+      def set_app_key(app_key)
+        @app_key = app_key
+      end
 
       def client
         @client ||= HTTPClient.new
+      end
+
+      def md5(value)
+        return Digest::MD5.hexdigest(value)
+      end
+
+      def get_pwd(user, pwd)
+        return md5(@app_key + md5(md5(user) + md5(pwd)))
+      end
+
+      def sign(options)
+        return 'xx'
       end
 
       def upload(image_url, options = {})
@@ -31,9 +52,10 @@ module ConfirmationCode
       end
 
       def account(options = {})
-        options = lianzhong_options.merge options
-        print options
-        response = client.post(ACCOUNT_URL, options)
+        options = damatu_options.merge options
+        ap options
+        ap get_pwd(options[:user_name], options[:user_pw])
+        response = client.get(ACCOUNT_URL, options)
         JSON.parse(response.body)
       end
 
@@ -42,12 +64,9 @@ module ConfirmationCode
         JSON.parse(response.body)
       end
 
-      def lianzhong_options
+      def damatu_options
         {
-            yzm_minlen:  '4',
-            yzm_maxlen: '6',
-            yzmtype_mark: '',
-            zztool_token: '',
+            appID:  '41635',
         }
       end
     end
