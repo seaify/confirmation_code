@@ -26,10 +26,8 @@ module ConfirmationCode
     @service.account default_options if @service
   end
 
-  def recognition_error(yzm_id, options = {})
-    options['yzm_id'] = yzm_id
-    options = default_options.merge options
-    @service.recognition_error options if @service
+  def recognition_error(yzm_id)
+    @service.recognition_error yzm_id, default_options if @service
   end
 
   private

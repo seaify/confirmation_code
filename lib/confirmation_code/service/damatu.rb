@@ -57,7 +57,6 @@ module ConfirmationCode
         upload_options['url'] = CGI::escape(image_url)
         upload_options['sign'] = sign(upload_options['user'], image_url.bytes)
         upload_options['type'] = 200 if upload_options['type'].nil?
-        ap upload_options
         response = client.get(UPLOAD_URL, upload_options)
         result(JSON.parse(response.body))
       end
@@ -69,9 +68,13 @@ module ConfirmationCode
         result(JSON.parse(response.body))
       end
 
-      def recognition_error(options = {})
-        response = client.post(RECOGNITION_ERROR_URL, options)
-        JSON.parse(response.body)
+      def recognition_error(ret_id, options = {})
+        recognition_options = damatu_options(options)
+        recognition_options['id'] = ret_id.to_s
+        recognition_options['sign'] = sign(recognition_options['user'], ret_id.to_s.bytes)
+        ap recognition_options
+        response = client.get(RECOGNITION_ERROR_URL, options)
+        result(JSON.parse(response.body))
       end
 
       def damatu_options(options)
@@ -85,9 +88,9 @@ module ConfirmationCode
 
       def result(body)
         {
-            success: body['ret'] == 0,
-            code: body['ret'],
-            data: body.except('ret', 'sign', 'cookie')
+            "success" => body['ret'] == 0,
+            "code" => body['ret'],
+            "data" => body.except('ret', 'sign', 'cookie')
         }
       end
     end
