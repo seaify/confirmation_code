@@ -73,7 +73,8 @@ module ConfirmationCode
         recognition_options['id'] = ret_id.to_s
         recognition_options['sign'] = sign(recognition_options['user'], ret_id.to_s.bytes)
         ap recognition_options
-        response = client.get(RECOGNITION_ERROR_URL, options)
+        response = client.post(RECOGNITION_ERROR_URL, recognition_options)
+        ap response.body
         result(JSON.parse(response.body))
       end
 
