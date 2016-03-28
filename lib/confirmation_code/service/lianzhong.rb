@@ -18,6 +18,10 @@ module ConfirmationCode
         @client ||= HTTPClient.new
       end
 
+      def set_extra_options(options)
+
+      end
+
       def upload(image_url, options = {})
         File.open("code.jpeg", "wb") do |f|
           f.write open(image_url).read

@@ -9,8 +9,9 @@ module ConfirmationCode
 
   attr_reader :username, :password
 
-  def use(service, username, password)
+  def use(service, username, password, options = {})
     @service = ConfirmationCode::Service.const_get("#{service.to_s.capitalize}")
+    @service.set_extra_options(options)
     @username = username
     @password = password
     @service
