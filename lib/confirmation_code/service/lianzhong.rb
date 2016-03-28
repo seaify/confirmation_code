@@ -30,7 +30,7 @@ module ConfirmationCode
         File.open('code.jpeg') do |file|
           options['upload'] = file
           response = client.post(UPLOAD_URL, options)
-          JSON.parse(response.body)
+          result(JSON.parse(response.body))
         end
       end
 
@@ -38,12 +38,13 @@ module ConfirmationCode
         options = lianzhong_options.merge options
         print options
         response = client.post(ACCOUNT_URL, options)
-        JSON.parse(response.body)
+        result(JSON.parse(response.body))
       end
 
-      def recognition_error(options = {})
+      def recognition_error(ret_id, options = {})
+        options['yzm_id'] = ret_id
         response = client.post(RECOGNITION_ERROR_URL, options)
-        JSON.parse(response.body)
+        result(JSON.parse(response.body))
       end
 
       def lianzhong_options
@@ -52,6 +53,13 @@ module ConfirmationCode
             yzm_maxlen: '6',
             yzmtype_mark: '',
             zztool_token: '',
+        }
+      end
+
+      def result(body)
+        {
+            "success" => body['result'],
+            "data" => body['data']
         }
       end
     end

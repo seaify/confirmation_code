@@ -90,7 +90,6 @@ module ConfirmationCode
       def result(body)
         {
             "success" => body['ret'] == 0,
-            "code" => body['ret'],
             "data" => body.except('ret', 'sign', 'cookie')
         }
       end
