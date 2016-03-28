@@ -3,7 +3,7 @@ require 'open-uri'
 require 'httpclient'
 require 'json'
 require 'digest/md5'
-require 'open-uri'
+require 'active_support/core_ext/hash'
 
 module ConfirmationCode
   module Service
@@ -59,14 +59,14 @@ module ConfirmationCode
         upload_options['type'] = 200 if upload_options['type'].nil?
         ap upload_options
         response = client.get(UPLOAD_URL, upload_options)
-        JSON.parse(response.body)
+        result(JSON.parse(response.body))
       end
 
       def account(options = {})
         account_options = damatu_options(options)
         account_options['sign'] = sign(account_options['user'])
         response = client.get(ACCOUNT_URL, account_options)
-        JSON.parse(response.body)
+        result(JSON.parse(response.body))
       end
 
       def recognition_error(options = {})
@@ -81,6 +81,14 @@ module ConfirmationCode
         damatu_options['pwd'] = get_pwd(options[:user_name], options[:user_pw])
         damatu_options['type'] = options[:type] unless options[:type].nil?
         return damatu_options
+      end
+
+      def result(body)
+        {
+            success: body['ret'] == 0,
+            code: body['ret'],
+            data: body.except('ret', 'sign', 'cookie')
+        }
       end
     end
 
