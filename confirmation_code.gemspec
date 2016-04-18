@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.executables << 'confirmation_code'
-  s.add_dependency 'active_support', '~> 3.0.0'
+  s.add_runtime_dependency 'activesupport', '~> 3.0', '>= 3.0.0'
   s.add_dependency 'httpclient', '~> 2.7'
   s.add_dependency 'awesome_print', '~> 1.6'
 end
