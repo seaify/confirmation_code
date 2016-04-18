@@ -30,7 +30,6 @@ uusee: api样例代码太复杂
 ## 使用
 
 代码风格上参照了china_sms
-_
 ```ruby
 # 支持 :lianzhong, :damatu 验证码接口
 ConfirmationCode.use :lianzhong, 'seaify', '67c86225'  
@@ -43,8 +42,13 @@ ConfirmationCode.use :lianzhong, 'seaify', '67c86225'
 result = ConfirmationCode.upload('http://captcha.qq.com/getimage')
 
 # 上传本地图片到打码平台
-暂时未更新
+稍后更新
 
 # 报告验证码识别结果有误
 ap ConfirmationCode.recognition_error result['data']['id']
 ```
+
+## 注意
+示例中的用户名,密码是我的账号, 只充值了1块.
+
+另外打码平台, 有软件分成的概念, 目前damatu默认使用的软件是我的一个软件, 后面更新时, 会提供接口, 供指定软件.
