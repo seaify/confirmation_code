@@ -42,7 +42,7 @@ ConfirmationCode.use :lianzhong, 'seaify', '67c86225'
 result = ConfirmationCode.upload('http://captcha.qq.com/getimage')
 
 # 上传本地图片到打码平台
-稍后更新
+result = ConfirmationCode.upload('0349.bmp')
 
 # 报告验证码识别结果有误
 ap ConfirmationCode.recognition_error result['data']['id']
