@@ -17,9 +17,13 @@ module ConfirmationCode
     @service
   end
 
-  def upload(image_url, options = {})
+  def upload(image_path, options = {})
     options = default_options.merge options
-    @service.upload image_url, options if @service
+    if image_path.start_with?('http')
+      @service.upload image_path, options if @service
+    else
+      @service.upload_local image_path, options if @service
+    end
   end
 
   def account

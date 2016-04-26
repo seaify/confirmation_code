@@ -15,6 +15,7 @@ module ConfirmationCode
       HOST = 'http://api.dama2.com:7766'
 
       UPLOAD_URL = File.join(HOST, 'app/d2Url?')
+      UPLOAD_LOCAL_URL = File.join(HOST, 'app/d2File?')
       ACCOUNT_URL = File.join(HOST, 'app/d2Balance?')
       RECOGNITION_ERROR_URL = File.join(HOST, 'app/d2ReportError?')
 
@@ -41,9 +42,6 @@ module ConfirmationCode
       end
 
       def get_pwd(user, pwd)
-        ap md5(user)
-        ap md5(pwd)
-        ap md5(md5(user) + md5(pwd))
         return md5(@app_key + md5(md5(user) + md5(pwd)))
       end
 
@@ -61,6 +59,19 @@ module ConfirmationCode
         result(JSON.parse(response.body))
       end
 
+      def upload_local(image_path, options = {})
+        upload_options = damatu_options(options)
+        upload_options['type'] = 200 if upload_options['type'].nil?
+        byte_data = File.read(image_path)
+        File.open(image_path) do |file|
+          upload_options['file'] = file
+          upload_options['sign'] = sign(upload_options['user'], byte_data.bytes)
+          response = client.post(UPLOAD_LOCAL_URL, upload_options)
+          result(JSON.parse(response.body))
+        end
+
+      end
+
       def account(options = {})
         account_options = damatu_options(options)
         account_options['sign'] = sign(account_options['user'])
@@ -72,9 +83,7 @@ module ConfirmationCode
         recognition_options = damatu_options(options)
         recognition_options['id'] = ret_id.to_s
         recognition_options['sign'] = sign(recognition_options['user'], ret_id.to_s.bytes)
-        ap recognition_options
         response = client.post(RECOGNITION_ERROR_URL, recognition_options)
-        ap response.body
         result(JSON.parse(response.body))
       end
 
