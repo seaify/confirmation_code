@@ -69,7 +69,6 @@ module ConfirmationCode
           response = client.post(UPLOAD_LOCAL_URL, upload_options)
           result(JSON.parse(response.body))
         end
-
       end
 
       def account(options = {})

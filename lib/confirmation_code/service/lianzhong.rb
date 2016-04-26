@@ -34,6 +34,15 @@ module ConfirmationCode
         end
       end
 
+      def upload_local(image_path, options = {})
+        options = lianzhong_options.merge options
+        File.open(image_path) do |file|
+          options['upload'] = file
+          response = client.post(UPLOAD_URL, options)
+          result(JSON.parse(response.body))
+        end
+      end
+
       def account(options = {})
         options = lianzhong_options.merge options
         print options
